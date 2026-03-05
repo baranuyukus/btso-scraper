@@ -5,12 +5,21 @@ SQLite ile şirket yönetimi, not ekleme, filtreleme/sıralama.
 """
 
 import os
+import sys
 import csv
 import sqlite3
 from datetime import datetime
 
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+def _get_app_dir():
+    """PyInstaller bundled veya normal çalışma dizini"""
+    if getattr(sys, 'frozen', False):
+        # PyInstaller bundled: output exe'nin yanına yazılır
+        return os.path.dirname(sys.executable)
+    return os.path.dirname(os.path.abspath(__file__))
+
+
+BASE_DIR = _get_app_dir()
 OUTPUT_DIR = os.path.join(BASE_DIR, "output")
 DB_FILE = os.path.join(OUTPUT_DIR, "btso.db")
 CSV_FILE = os.path.join(OUTPUT_DIR, "sirketler.csv")

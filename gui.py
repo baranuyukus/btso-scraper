@@ -36,7 +36,7 @@ TEXT_SECONDARY = "#8899aa"
 TEXT_MUTED = "#556677"
 DANGER = "#e74c3c"
 SUCCESS = "#2ecc71"
-FONT_FAMILY = "'SF Pro Display', 'Helvetica Neue', 'Arial', sans-serif"
+FONT_FAMILY = "'Helvetica Neue', 'Arial', sans-serif"
 
 
 DARK_STYLE = f"""

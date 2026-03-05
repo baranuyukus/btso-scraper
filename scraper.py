@@ -36,13 +36,16 @@ HEADERS = {
     "Accept-Language": "tr-TR,tr;q=0.9",
 }
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+import sys
+
+BASE_DIR = os.path.dirname(sys.executable) if getattr(sys, 'frozen', False) else os.path.dirname(os.path.abspath(__file__))
+BUNDLE_DIR = getattr(sys, '_MEIPASS', BASE_DIR)
 OUTPUT_DIR = os.path.join(BASE_DIR, "output")
 OUTPUT_CSV = os.path.join(OUTPUT_DIR, "sirketler.csv")
 PROGRESS_FILE = os.path.join(OUTPUT_DIR, "progress.json")
-DATASET_DIR = os.path.join(BASE_DIR, "dataset")
-DATASET_IMAGES = os.path.join(DATASET_DIR, "images")
-DATASET_LABELS = os.path.join(DATASET_DIR, "labels.csv")
+DATASET_DIR = os.path.join(BUNDLE_DIR, "dataset")
+DATASET_IMAGES = os.path.join(BASE_DIR, "dataset", "images")
+DATASET_LABELS = os.path.join(BUNDLE_DIR, "dataset", "labels.csv")
 
 # Thread-safe
 csv_lock = threading.Lock()

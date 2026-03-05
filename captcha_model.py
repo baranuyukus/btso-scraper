@@ -27,11 +27,15 @@ from sklearn.pipeline import Pipeline
 import json
 
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DATASET_DIR = os.path.join(BASE_DIR, "dataset")
-IMAGES_DIR = os.path.join(DATASET_DIR, "images")
-LABELS_FILE = os.path.join(DATASET_DIR, "labels.csv")
-MODEL_DIR = os.path.join(DATASET_DIR, "model")
+import sys
+
+_FROZEN = getattr(sys, 'frozen', False)
+BASE_DIR = os.path.dirname(sys.executable) if _FROZEN else os.path.dirname(os.path.abspath(__file__))
+BUNDLE_DIR = getattr(sys, '_MEIPASS', BASE_DIR)
+DATASET_DIR = os.path.join(BUNDLE_DIR, "dataset")
+IMAGES_DIR = os.path.join(BASE_DIR, "dataset", "images")
+LABELS_FILE = os.path.join(BUNDLE_DIR, "dataset", "labels.csv")
+MODEL_DIR = os.path.join(BUNDLE_DIR, "dataset", "model")
 MODEL_FILE = os.path.join(MODEL_DIR, "captcha_knn.pkl")
 STATS_FILE = os.path.join(MODEL_DIR, "training_stats.json")
 
