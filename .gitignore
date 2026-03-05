@@ -6,6 +6,7 @@ __pycache__/
 
 # Output & runtime data
 output/
+dataset/images/
 
 # Build artifacts
 build/

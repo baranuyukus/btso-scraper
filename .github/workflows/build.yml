@@ -33,19 +33,6 @@ jobs:
           pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Train Model
-        run: |
-          python -c "
-          import os, csv
-          os.makedirs('dataset/images', exist_ok=True)
-          os.makedirs('dataset/model', exist_ok=True)
-          labels_path = 'dataset/labels.csv'
-          if not os.path.exists(labels_path):
-              with open(labels_path, 'w', newline='') as f:
-                  csv.writer(f).writerow(['filename', 'label'])
-          "
-          python captcha_model.py || echo "Model training skipped (no dataset)"
-
       - name: Build with PyInstaller
         run: |
           python build.py
