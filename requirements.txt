@@ -1,0 +1,9 @@
+requests
+Pillow
+beautifulsoup4
+lxml
+scikit-learn
+scipy
+numpy
+PySide6
+PyInstaller

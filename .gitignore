@@ -1,0 +1,30 @@
+venv/
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+
+# Output & runtime data
+output/
+dataset/images/
+dataset/model/
+
+# Build artifacts
+build/
+dist/
+*.spec
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Temp files
+*.png
+*.html
+!dataset/images/
+last_response.html
+response.html
+captcha_attempt_*.png
+captcha_processed_*.png
