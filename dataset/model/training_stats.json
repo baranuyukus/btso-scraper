@@ -1,0 +1,15 @@
+{
+  "model_name": "SVM(rbf)",
+  "total_captchas": 3923,
+  "total_digits": 23538,
+  "cv_accuracy": 0.9930750203198873,
+  "train_digit_accuracy": 99.974509304104,
+  "train_captcha_accuracy": 99.92352791231201,
+  "all_results": {
+    "KNN(K=5)": 0.9444725123322719,
+    "KNN(K=7)": 0.9513974378621185,
+    "SVM(rbf)": 0.9930750203198873,
+    "SVM(C=50)": 0.9930750203198873,
+    "RandomForest": 0.9708982121206706
+  }
+}
